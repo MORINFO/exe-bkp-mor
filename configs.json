@@ -1,4 +1,5 @@
 {
     "id_empresa": "9",
-    "diretorio_bkp": "./arquivos-exemplo"
+    "diretorio_bkp": "./arquivos-exemplo",
+    "diretorio_xml": "./xml-exemplo"
 }

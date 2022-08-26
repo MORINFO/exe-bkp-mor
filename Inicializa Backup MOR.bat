@@ -7,6 +7,6 @@ pm2 delete all
 
 pm2 save --force
 
-pm2 start verificaarquivos.exe
+pm2 start BKP-MOR.exe
 
 pm2 save --force

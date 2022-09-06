@@ -8,9 +8,8 @@ call pm2 delete all
 
 call pm2 save --force 
 
-call git pull
-
 call pm2 start BKP-MOR.exe --max-memory-restart 300M
 
 call pm2 save --force
+
 

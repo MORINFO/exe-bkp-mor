@@ -1,6 +1,6 @@
 # BKP MORINFO.
 
- Instalar o GitHub no Servidor
+ Instalar o Git no Servidor
 
  Git Clone deste repositório
 

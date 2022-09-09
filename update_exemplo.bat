@@ -10,7 +10,7 @@ call pm2 save --force
 
 call git pull
 
-call pm2 start BKP-MOR.exe
+call pm2 start C:\Users\nicol\Desktop\Projetos\Ferramentas\exe-bkp-mor\BKP-MOR.exe
 
 call pm2 save --force
-
+ 

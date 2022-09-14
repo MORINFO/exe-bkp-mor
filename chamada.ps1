@@ -1,1 +1,1 @@
-update-bkp-mor.exe
+Start-Process -FilePath update-bkp-mor.exe

@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "pm2": "^5.2.0",
-    "pm2-windows-startup": "^1.0.3"
+    "pm2-windows-startup": "^1.1.0"
   },
   "name": "exe-bkp-mor",
   "description": "Instalar o Git no Servidor",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {

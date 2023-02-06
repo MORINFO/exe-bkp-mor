@@ -4,8 +4,8 @@
     "pm2-windows-startup": "^1.1.0"
   },
   "name": "exe-bkp-mor",
-  "description": "Instalar o Git no Servidor",
-  "version": "1.0.6",
+  "description": "Realiza os backups agendados e solicitados",
+  "version": "1.0.8",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {

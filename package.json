@@ -1,25 +1,22 @@
 {
-  "dependencies": {
-    "pm2": "^5.2.0",
-    "pm2-windows-startup": "^1.1.0"
-  },
-  "name": "exe-bkp-mor",
-  "description": "Realiza os backups agendados e solicitados",
-  "version": "1.0.9",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MORINFO/exe-bkp-mor.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MORINFO/exe-bkp-mor/issues"
-  },
-  "homepage": "https://github.com/MORINFO/exe-bkp-mor#readme"
+    "name": "exe-bkp-mor",
+    "description": "Realiza os backups agendados e solicitados",
+    "version": "1.1.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MORINFO/exe-bkp-mor.git"
+    },
+    "bugs": {
+        "url": "https://github.com/MORINFO/exe-bkp-mor/issues"
+    },
+    "homepage": "https://github.com/MORINFO/exe-bkp-mor#readme"
 }

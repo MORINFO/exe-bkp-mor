@@ -5,3 +5,4 @@ updaterOut.log
 .ps1
 git-push.bat
 out.log
+.log

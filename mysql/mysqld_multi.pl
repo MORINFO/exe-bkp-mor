@@ -1,16 +1,22 @@
 #!/usr/bin/perl
 
-# Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2000, 2022, Oracle and/or its affiliates.
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Library General Public
-# License as published by the Free Software Foundation; version 2
-# of the License.
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# Library General Public License for more details.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License, version 2.0, for more details.
 #
 # You should have received a copy of the GNU Library General Public
 # License along with this library; if not, write to the Free
@@ -29,8 +35,8 @@ my @defaults_options;   #  Leading --no-defaults, --defaults-file, etc.
 $opt_example       = 0;
 $opt_help          = 0;
 $opt_log           = undef();
-$opt_mysqladmin    = "C:/Program Files/MySQL/bin/mysqladmin";
-$opt_mysqld        = "C:/Program Files/MySQL/bin/mysqld";
+$opt_mysqladmin    = "C:/Program Files (x86)/MySQL/bin/mysqladmin";
+$opt_mysqld        = "C:/Program Files (x86)/MySQL/bin/mysqld";
 $opt_no_log        = 0;
 $opt_password      = undef();
 $opt_tcp_ip        = 0;
@@ -221,7 +227,7 @@ sub defaults_for_group
 
 ####
 #### Init log file. Check for appropriate place for log file, in the following
-#### order:  my_print_defaults mysqld datadir, C:/Program Files/MySQL/share
+#### order:  my_print_defaults mysqld datadir, C:/Program Files (x86)/MySQL/share
 ####
 
 sub init_log
@@ -235,7 +241,7 @@ sub init_log
   }
   if (!defined($logdir))
   {
-    $logdir= "C:/Program Files/MySQL/share" if (-d "C:/Program Files/MySQL/share" && -w "C:/Program Files/MySQL/share");
+    $logdir= "C:/Program Files (x86)/MySQL/share" if (-d "C:/Program Files (x86)/MySQL/share" && -w "C:/Program Files (x86)/MySQL/share");
   }
   if (!defined($logdir))
   {
@@ -340,7 +346,8 @@ sub start_mysqlds()
         if (! -d $datadir."/mysql") {
           if (-w $datadir) {
             print "\n\nInstalling new database in $datadir\n\n";
-            $install_cmd="C:/Program Files/MySQL/bin/mysql_install_db ";
+            $install_cmd="C:/Program Files (x86)/MySQL/bin/mysqld ";
+            $install_cmd.="--initialize ";
             $install_cmd.="--user=mysql ";
             $install_cmd.="--datadir=$datadir";
             system($install_cmd);
@@ -575,7 +582,7 @@ sub list_defaults_files
   return grep { defined $_ and not $seen{$_}++ and -f $_ and -r $_ }
               ('/etc/my.cnf',
                '/etc/mysql/my.cnf',
-               'C:/Program Files/MySQL/my.cnf',
+               'C:/Program Files (x86)/MySQL/my.cnf',
                ($ENV{MYSQL_HOME} ? "$ENV{MYSQL_HOME}/my.cnf" : undef),
                $opt{'extra-file'},
                ($ENV{HOME} ? "$ENV{HOME}/.my.cnf" : undef));
@@ -783,7 +790,7 @@ sub example
 #   (as per Linux/Unix standard). You may even replace the
 #   /etc/init.d/mysql.server script with it.
 #
-#   Before using, you must create a my.cnf file either in C:/Program Files/MySQL/my.cnf
+#   Before using, you must create a my.cnf file either in C:/Program Files (x86)/MySQL/my.cnf
 #   or /root/.my.cnf and add the [mysqld_multi] and [mysqld#] groups.
 #
 #   The script can be found from support-files/mysqld_multi.server.sh
@@ -791,17 +798,17 @@ sub example
 #
 
 [mysqld_multi]
-mysqld     = C:/Program Files/MySQL/bin/mysqld_safe
-mysqladmin = C:/Program Files/MySQL/bin/mysqladmin
+mysqld     = C:/Program Files (x86)/MySQL/bin/mysqld_safe
+mysqladmin = C:/Program Files (x86)/MySQL/bin/mysqladmin
 user       = multi_admin
 password   = my_password
 
 [mysqld2]
 socket     = /tmp/mysql.sock2
 port       = 3307
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data2/hostname.pid2
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data2
-language   = C:/Program Files/MySQL/share/mysql/english
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data2/hostname.pid2
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data2
+language   = C:/Program Files (x86)/MySQL/share/mysql/english
 user       = unix_user1
 
 [mysqld3]
@@ -810,25 +817,25 @@ ledir      = /path/to/mysqld-binary/
 mysqladmin = /path/to/mysqladmin
 socket     = /tmp/mysql.sock3
 port       = 3308
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data3/hostname.pid3
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data3
-language   = C:/Program Files/MySQL/share/mysql/swedish
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data3/hostname.pid3
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data3
+language   = C:/Program Files (x86)/MySQL/share/mysql/swedish
 user       = unix_user2
 
 [mysqld4]
 socket     = /tmp/mysql.sock4
 port       = 3309
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data4/hostname.pid4
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data4
-language   = C:/Program Files/MySQL/share/mysql/estonia
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data4/hostname.pid4
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data4
+language   = C:/Program Files (x86)/MySQL/share/mysql/estonia
 user       = unix_user3
  
 [mysqld6]
 socket     = /tmp/mysql.sock6
 port       = 3311
-pid-file   = C:/Program Files/MySQL/MySQL Server 5.6/data6/hostname.pid6
-datadir    = C:/Program Files/MySQL/MySQL Server 5.6/data6
-language   = C:/Program Files/MySQL/share/mysql/japanese
+pid-file   = C:/Program Files/MySQL/MySQL Server 5.7/data6/hostname.pid6
+datadir    = C:/Program Files/MySQL/MySQL Server 5.7/data6
+language   = C:/Program Files (x86)/MySQL/share/mysql/japanese
 user       = unix_user4
 EOF
   exit(0);

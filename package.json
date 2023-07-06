@@ -1,7 +1,7 @@
 {
     "name": "exe-bkp-mor",
     "description": "Realiza os backups agendados e solicitados",
-    "version": "1.2.0",
+    "version": "1.2.3",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
